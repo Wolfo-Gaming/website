@@ -12,7 +12,7 @@ export default function Footer() {
                 </Grid>
                 <Grid item display="flex" justifyContent="center" xs={4}>
                     <Toolbar>
-                        <Typography variant="caption">©2023 Robert de Leeuw</Typography>
+                        <Typography variant="caption"><a href="https://github.com/Wolfo-Gaming/website">Broncode</a> © 2023 Robert de Leeuw</Typography>
                     </Toolbar>
 
                 </Grid>

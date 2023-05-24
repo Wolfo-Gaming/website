@@ -1,7 +1,7 @@
 "use client";
 
 
-import { IconButton } from "@mui/material";
+import { FormControlLabel, IconButton, SvgIcon, Switch } from "@mui/material";
 import { Box, AppBar, Toolbar, Typography, Button, Container, CssBaseline, Dialog, Slide, Grow } from "@mui/material"
 import { useState, forwardRef } from "react";
 import { TransitionProps } from '@mui/material/transitions';
@@ -9,7 +9,7 @@ import { Email, GitHub, Menu, LinkedIn } from "@mui/icons-material";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 const pages = [
-  {key: "Blog", href: "/blog"}
+  { key: "Blog", href: "/blog" }
 ];
 
 const Transition = forwardRef(function Transition(
@@ -21,14 +21,14 @@ const Transition = forwardRef(function Transition(
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-function NavBar({ setThemevariant, themevariant }: {setThemevariant: (variant: "dark" | "light") => void, themevariant: "dark" | "light"}) {
+function NavBar({ setThemevariant, themevariant, children }: { setThemevariant: (variant: "dark" | "light") => void, themevariant: "dark" | "light", children: any }) {
 
   const [open, setOpen] = useState(false)
-
+  const [checked, setChecked] = useState(false)
   return (
     <Box sx={{ flexGrow: 1, position: "relative" }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ padding: "10px", margin: 0, backdropFilter: "blur(10px)", backgroundColor: themevariant == "dark" ? "#000000e3" : "#d7d7d787"}}>
+      <AppBar position="fixed" sx={{ padding: "10px", margin: 0, backdropFilter: "blur(10px)", backgroundColor: themevariant == "dark" ? "#000000e3" : "#d7d7d787" }}>
         <Container>
           <Toolbar disableGutters>
             <Typography
@@ -47,13 +47,10 @@ function NavBar({ setThemevariant, themevariant }: {setThemevariant: (variant: "
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              ROBERT
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: 3 }}>
-              {pages.map((page) => (
-                <Button key={page.key} href={page.href} sx={{color: (theme) => theme.palette.mode == "dark" ? "white" : "black", backgroundColor:"rgba(0,0,0,0)"}}>{page.key}</Button>
-
-              ))}
+              {children}
             </Box>
             <Typography
               variant="h5"
@@ -87,7 +84,7 @@ function NavBar({ setThemevariant, themevariant }: {setThemevariant: (variant: "
                 setThemevariant(themevariant == "dark" ? "light" : "dark")
               }}>
                 {themevariant == "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-              </IconButton>
+              </IconButton >
             </Toolbar>
             <IconButton sx={{ display: { xs: "flex", md: "none" } }} onClick={() => setOpen(true)}>
               <Menu />
@@ -134,5 +131,10 @@ function NavBar({ setThemevariant, themevariant }: {setThemevariant: (variant: "
     </Box>
 
   );
+}
+export function NavBarButton({ text, href }: { text: string, href: string }) {
+  return (
+    <Button key={text} href={href} sx={{ color: (theme) => theme.palette.mode == "dark" ? "white" : "black", backgroundColor: "rgba(0,0,0,0)" }}>{text}</Button>
+  )
 }
 export default NavBar

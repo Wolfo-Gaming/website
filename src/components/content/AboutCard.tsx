@@ -1,12 +1,16 @@
 "use client";
 
-import { Card, CardMedia, CardContent, CardActions, Typography, Button, Fade } from "@mui/material";
+import { Card, CardMedia, CardContent, CardActions, Typography, Button, Fade, Grid } from "@mui/material";
 
 export default function AboutCard({ title, description, buttonText, onClick, image }: { title: string, description: string, buttonText: string, onClick?: React.MouseEventHandler<HTMLButtonElement>, image: string }) {
   return (
     <>
       <Fade in={true}>
-        <Card sx={{ minWidth: "100%" }}>
+        <Card sx={{
+          minWidth: "100%",
+          display: "flex",
+          flexDirection: "column"
+        }}>
           <CardMedia
             sx={{ height: 220 }}
             image={image}
@@ -20,7 +24,7 @@ export default function AboutCard({ title, description, buttonText, onClick, ima
               {description}
             </Typography>
           </CardContent>
-          <CardActions >
+          <CardActions disableSpacing sx={{ mt: "auto" }}>
             <Button fullWidth variant="contained" color="secondary" onClick={onClick}>{buttonText}</Button>
           </CardActions>
         </Card>

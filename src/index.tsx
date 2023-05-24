@@ -13,6 +13,7 @@ import { useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import { CookiesProvider, useCookies } from "react-cookie";
 import { debug } from "./lib/debug";
+import { Webcontainers } from './pages/webcontainers';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -55,6 +56,7 @@ export function Main() {
             <Routes>
               <Route index element={<Index />} />
               <Route path="/test" element={<Test />} />
+              <Route path="/webcontainers" element={<Webcontainers />} />
             </Routes>
           </BrowserRouter>
         </React.StrictMode>

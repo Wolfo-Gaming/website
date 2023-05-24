@@ -3,7 +3,7 @@ import React from "react";
 
 import { ThemeProvider } from "@mui/material/styles";
 import Footer from "../components/Footer";
-import NavBar from "../components/Navbar";
+import NavBar, { NavBarButton } from "../components/Navbar";
 import { darkTheme, lightTheme } from "../lib/theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Grid, Typography, Button, useMediaQuery } from "@mui/material";
@@ -13,6 +13,7 @@ import { Start } from "../components/content/Start";
 import { useState } from "react";
 import { CookiesProvider, useCookies } from "react-cookie";
 import { debug } from "../lib/debug";
+import { ImageProdiver } from "../components/ImageProvider";
 
 export function Index() {
   var [themevariant, setThemevariantState] = useState<"dark" | "light">("dark")
@@ -27,7 +28,7 @@ export function Index() {
       sameSite: "none"
     })
   }
-  
+
   // if no memo is used causes infite render
   React.useMemo(() => {
     if (themeCookie["theme-mode"]) {
@@ -45,23 +46,24 @@ export function Index() {
     <CookiesProvider>
       <ThemeProvider theme={themevariant == "dark" ? darkTheme : lightTheme}>
         <CssBaseline />
-        <NavBar setThemevariant={setThemevariant} themevariant={themevariant} />
-        <Start img={`/img/rpi-${themevariant}.jpg`} buttonText="Read More" content="Test Content" variant="h2" />
-        <Typography display="flex" justifyContent="center" sx={{ mt: 2, fontWeight: "medium" }} variant="h3">About me</Typography>
+        <NavBar setThemevariant={setThemevariant} themevariant={themevariant} >
+          <NavBarButton href="/test" text="Code"/>
+          <NavBarButton href="/test" text="Homelab"/>
+          <NavBarButton href="/test" text="IoT"/>
+          <NavBarButton href="/test" text="Contact"/>
+        </NavBar>
+        <Start img={ImageProdiver(themevariant, `/img/rpi-dark.jpg`, `/img/rpi-light.jpg`)} content="Test Content" variant="h2" />
         <Grid direction="row" container sx={{ mt: 4 }}>
           <Grid container xs={11} md={10 / 3} sx={{ mx: "auto", mb: 1 }}>
-            <AboutCard image="/img/mountains.jpg" buttonText="Read more" title="Test" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." />
+            <AboutCard image="/img/code.jpg" buttonText="Lees meer" title="Programmeren" description="Begonnen met het programmeren in javascript (Node.js) maar met de tijd mee ook andere talen geleerd zoals Java en C#. Ik ben ook nog talen aan het leren zoals Dart en Python." />
           </Grid>
           <Grid container xs={11} md={10 / 3} sx={{ mx: "auto", mb: 1 }}>
-            <AboutCard image="/img/mountains.jpg" buttonText="Read more" title="Test" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." />
+            <AboutCard image="/img/servers.jpg" buttonText="Lees meer" title="Homelab" description="Sinds 2019 draai ik thuis mij eigen servers, hierop staat grootendeels software die ik zelf gemaakt heb maar ik gebruik ook open-source software zoals Homeassistant." />
           </Grid>
           <Grid container xs={11} md={10 / 3} sx={{ mx: "auto", mb: 1 }}>
-            <AboutCard image="/img/mountains.jpg" buttonText="Read more" title="Test" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." />
+            <AboutCard image="/img/iot.jpg" buttonText="Lees meer" title="Internet of Things" description="Sinds kort doe ik ook veel met IoT bijvoorbeeld doe ik thuis ons electriciteitsgebruik monitoren met een raspberry pi. Om alle data te kunnen gebruiken om ons huis zuiniger te maken gebruik ik Homeassistant." />
           </Grid>
         </Grid>
-        <CardLeft url="/img/mountains.jpg" content="Test" />
-        <CardRight url="/img/mountains.jpg" content="Test" />
-        <CardContentImage url="/img/mountains.jpg" content="Test" />
         <Footer />
       </ThemeProvider>
     </CookiesProvider>
