@@ -9,70 +9,83 @@ export default function HomePage() {
         <>
             <BackgroundImage src='/img/server.jpg' h={"40rem"} style={{ backdropFilter: "blur(20px)" }}>
                 <Center my={"auto"} h={"100%"}>
-                    <Text fz={40} fw={600}>Test text</Text>
+                    <div style={{ textAlign: "center" }}>
+                        <Text fz={50} fw={600}>Test text</Text>
+                        <Text mt={20}>description blabla</Text>
+                    </div>
                 </Center>
             </BackgroundImage>
             <Grid mx={20} h={2000}>
                 <GridCol span={4}>
-                    <FeaturePaper title='Hardware' icon={<Flex
-                        style={{
-                            backgroundColor: "var(--mantine-color-orange-filled)",
-                            borderRadius: "50%",
-                        }}
-                    >
-                        <IconCpu2
+                    <FeaturePaper title='Hardware'
+                        component={Link}
+                        href="/hardware"
+                        icon={<Flex
                             style={{
-                                padding: 20,
-                                marginTop: "auto",
-                                marginBottom: "auto",
-                                marginLeft: "auto",
-                                marginRight: "auto",
+                                backgroundColor: "var(--mantine-color-orange-filled)",
+                                borderRadius: "50%",
                             }}
-                            size={75}
-                        />
-                    </Flex>}>
+
+                        >
+                            <IconCpu2
+                                style={{
+                                    padding: 20,
+                                    marginTop: "auto",
+                                    marginBottom: "auto",
+                                    marginLeft: "auto",
+                                    marginRight: "auto",
+                                }}
+                                size={75}
+                            />
+                        </Flex>}>
                         Test
                     </FeaturePaper>
                 </GridCol>
                 <GridCol span={4}>
-                    <FeaturePaper title='Development' icon={<Flex
-                        style={{
-                            backgroundColor: "var(--mantine-color-teal-filled)",
-                            borderRadius: "50%",
-                        }}
-                    >
-                        <IconFileCode
+                    <FeaturePaper title='Development'
+                        component={Link}
+                        href="https://github.com/Wolfo-Gaming"
+                        icon={<Flex
                             style={{
-                                padding: 20,
-                                marginTop: "auto",
-                                marginBottom: "auto",
-                                marginLeft: "auto",
-                                marginRight: "auto",
+                                backgroundColor: "var(--mantine-color-teal-filled)",
+                                borderRadius: "50%",
                             }}
-                            size={75}
-                        />
-                    </Flex>}>
+                        >
+                            <IconFileCode
+                                style={{
+                                    padding: 20,
+                                    marginTop: "auto",
+                                    marginBottom: "auto",
+                                    marginLeft: "auto",
+                                    marginRight: "auto",
+                                }}
+                                size={75}
+                            />
+                        </Flex>}>
                         Test
                     </FeaturePaper>
                 </GridCol>
                 <GridCol span={4}>
-                    <FeaturePaper title='Software' icon={<Flex
-                        style={{
-                            backgroundColor: "var(--mantine-color-cyan-filled)",
-                            borderRadius: "50%",
-                        }}
-                    >
-                        <IconBoxSeam
+                    <FeaturePaper title='Software'
+                        component={Link}
+                        href="/software"
+                        icon={<Flex
                             style={{
-                                padding: 20,
-                                marginTop: "auto",
-                                marginBottom: "auto",
-                                marginLeft: "auto",
-                                marginRight: "auto",
+                                backgroundColor: "var(--mantine-color-cyan-filled)",
+                                borderRadius: "50%",
                             }}
-                            size={75}
-                        />
-                    </Flex>}>
+                        >
+                            <IconBoxSeam
+                                style={{
+                                    padding: 20,
+                                    marginTop: "auto",
+                                    marginBottom: "auto",
+                                    marginLeft: "auto",
+                                    marginRight: "auto",
+                                }}
+                                size={75}
+                            />
+                        </Flex>}>
                         Test
                     </FeaturePaper>
                 </GridCol>
