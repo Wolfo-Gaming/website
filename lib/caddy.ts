@@ -14,5 +14,4 @@ export async function putConfig(config: any): Promise<any> {
         }
     })
     return result.data;
-
 }
