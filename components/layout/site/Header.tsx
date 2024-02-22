@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function Header({ user }: { user: User | null }) {
     return (
         <>
-            <Text component={Link} href={"/"} my={"auto"} fw={500} fz={25} ml={20}>
+            <Text component={Link} href={"/"} my={"auto"} fw={500} fz={25} ml={20} color="rgb(116, 192, 252)">
                 Robert de Leeuw
             </Text>
             <Button ml={"auto"} component={Link} href={"/about"} variant="subtle">
