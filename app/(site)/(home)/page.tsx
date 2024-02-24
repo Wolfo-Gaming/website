@@ -42,7 +42,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </Container>
-            <Text style={{ textAlign: "center" }} fw={600} fz={50}>Software</Text>
+            <Text style={{ textAlign: "center" }} fw={600} fz={50}>Ervaring Software</Text>
             <div style={{ marginLeft: "auto", marginRight: "auto", backgroundColor: '#2525c2', height: 5, width: 90, borderRadius: 10, marginBottom: 40 }} />
             <Paper mx={40} p={5} my={20} bg={"#111114"}>
                 <Center my={15}>
