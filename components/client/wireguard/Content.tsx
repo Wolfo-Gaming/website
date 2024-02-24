@@ -21,7 +21,7 @@ export default function Content() {
         getPeers().then((data) => {
             if (data == undefined) return;
             setPeers(data.content.map(p => {
-                console.log(p)
+               
                 var lastseenago = Date.now() - (p.latestHandshake * 1000)
                 return {
                     pubkey: <Group>
@@ -61,7 +61,7 @@ export default function Content() {
                             </ActionIcon>
                             <ActionIcon color="grape" onClick={() => {
                                 setActionPeer(p)
-                                console.log(p)
+                              
                                 getInterface().then((inr) => {
                                     setInterf(inr)
                                     setQrModalOpen(true)

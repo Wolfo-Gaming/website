@@ -2,15 +2,15 @@ import { BackgroundImage, Center, Paper, Stack, Avatar, Grid, Anchor, Card, Divi
 import { IconCalendar, IconMapPin, IconLink, IconBrandLinkedin, IconBrandGithub, IconCertificate, IconDeviceLaptop, IconClock, IconBuildingChurch, IconUser } from "@tabler/icons-react";
 export default function About() {
     return (
-        <BackgroundImage src="/img/server.jpg">
+        <BackgroundImage src="/img/landscape.jpg">
             <Center w={"100%"}>
                 <Paper mt={80} mb={100} p={20} radius={30} bg={"rgb(16,16,16, 0.9)"} style={{ backdropFilter: "blur(5px)" }}>
                     <Stack display={"flex"} gap={0} >
-                        <Avatar size={200} mx={"auto"} src={"/img/avatar.jpg"} />
+                        <Avatar size={200} mx={"auto"} my={40} src={"/img/avatar.jpg"} />
                         <Text mx={"auto"} fw={600} fz={"3rem"}>
                             Robert de Leeuw
                         </Text>
-                        <Grid columns={2} mx={50} my={20}>
+                        <Grid columns={2} mx={"auto"} my={20}>
                             <GridCol span={"content"} miw={0}>
                                 <div style={{ marginTop: 10, display: "flex" }}>
                                     <IconCalendar style={{ marginTop: "auto", marginBottom: "auto", marginRight: "10px" }} />
@@ -30,15 +30,7 @@ export default function About() {
                                 </div>
                             </GridCol>
                             <GridCol span={"content"}>
-                                <Anchor display={"flex"} mt={10} >
-                                    <IconLink style={{ marginTop: "auto", marginBottom: "auto", marginRight: "10px" }} />
-                                    <Text my={"auto"}>
-                                        Mijn CV
-                                    </Text>
-                                </Anchor>
-                            </GridCol>
-                            <GridCol span={"content"}>
-                                <Anchor display={"flex"} mt={10} >
+                                <Anchor display={"flex"} mt={10} href="https://www.linkedin.com/in/robert-de-leeuw-aba39b24b/">
                                     <IconBrandLinkedin style={{ marginTop: "auto", marginBottom: "auto", marginRight: "10px" }} />
                                     <Text my={"auto"}>
                                         LinkedIn
@@ -46,7 +38,7 @@ export default function About() {
                                 </Anchor>
                             </GridCol>
                             <GridCol span={"content"}>
-                                <Anchor display={"flex"} mt={10}>
+                                <Anchor display={"flex"} mt={10} href="https://github.com/Wolfo-Gaming">
                                     <IconBrandGithub style={{ marginTop: "auto", marginBottom: "auto", marginRight: "10px" }} />
                                     <Text my={"auto"}>
                                         Github

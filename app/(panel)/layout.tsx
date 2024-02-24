@@ -9,7 +9,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="dark"/>
       </head>
       <body style={{ height: "100vh", width: "100vw" }}>
         <MantineProvider theme={theme} forceColorScheme="dark">

@@ -7,7 +7,6 @@ export const metadata = {
 }
 export default async function Websites() {
     const user = await getUser()
-    console.log(generateKeypair())
     return (
         <Stack>
            <Content />

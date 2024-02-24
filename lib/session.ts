@@ -38,6 +38,16 @@ export default async function getUser(): Promise<User> {
         return redirect("/auth/login");
     }
 }
+export async function getUserByEmail(email: string): Promise<User | null> {
+    const { db } = await connectToDatabase();
+    const user = await db.collection("users").findOne({ email });
+    if (!user) return null;
+    //@ts-expect-error
+    delete user._id;
+    delete user.password;
+    // @ts-expect-error
+    return user;
+}
 export async function getUserOptional(): Promise<User | null> {
     const cookieStore = cookies()
     const valid = cookieStore.get("auth_token")

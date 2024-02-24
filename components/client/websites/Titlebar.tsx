@@ -195,7 +195,7 @@ function CreateStatic({ sync, close }: { sync: () => void, close: any }) {
                         ],
                         "terminal": true
                     })
-                    console.log(s)
+                 
                     putConfig(s).then(() => {
                         close()
                         notifications.show({

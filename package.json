@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@mantine/charts": "^7.5.1",
-    "@mantine/code-highlight": "^7.5.1",
+    "@mantine/code-highlight": "^7.5.3",
     "@mantine/core": "^7.5.1",
     "@mantine/dropzone": "^7.5.1",
     "@mantine/form": "^7.5.1",
@@ -19,12 +19,14 @@
     "@mantine/notifications": "^7.5.1",
     "@mantinex/dev-icons": "^1.0.2",
     "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/monaco": "^0.1.0",
     "@mdx-js/react": "^3.0.1",
     "@monaco-editor/react": "^4.6.0",
     "@next/mdx": "^14.1.0",
     "@tabler/icons-react": "^2.46.0",
     "@timkendrick/monaco-editor": "^0.0.9",
     "@types/mdx": "^2.0.11",
+    "@types/react-syntax-highlighter": "^15.5.11",
     "@zeit/next-css": "^1.0.1",
     "axios": "^1.6.7",
     "base-64": "^1.0.0",
@@ -46,7 +48,9 @@
     "react-dom": "^18",
     "react-monaco-editor": "^0.55.0",
     "react-qr-code": "^2.0.12",
-    "recharts": "^2.11.0"
+    "react-syntax-highlighter": "^15.5.0",
+    "recharts": "^2.11.0",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@types/base-64": "^1.0.2",

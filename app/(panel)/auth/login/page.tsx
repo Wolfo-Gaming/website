@@ -17,7 +17,6 @@ export default function Login() {
 
         const authorized = bcrypt.compareSync(ctx.password, document.password)
         if (!authorized) return false;
-        console.log(document)
 
         return jwt.sign({ email: document.email }, process.env.APP_SECRET as string);
     }

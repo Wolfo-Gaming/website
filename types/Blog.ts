@@ -1,13 +1,14 @@
 export type Post = {
     date_created: number,
     date_updated: number,
-    userId: string,
+    user: string,
     image: string,
     title: string,
     description: string,
-    content: string,
-    files: PostFile,
-    id: string
+    content: any,
+    files: PostFile[],
+    _id: string,
+    rawcontent: string
 }
 export type PostFile = {
     src: string,

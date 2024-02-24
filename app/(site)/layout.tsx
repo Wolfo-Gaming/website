@@ -3,7 +3,7 @@ import React from "react";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Inter } from 'next/font/google'
 import { theme } from "@/theme";
- 
+import '@mantine/code-highlight/styles.css';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: any }) {
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="dark"/>
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"

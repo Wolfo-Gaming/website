@@ -87,7 +87,7 @@ export async function createPeer(peer: PeerCreateRequest): Promise<CreatedPeer> 
         await db.collection("wireguard").insertOne({ allowedIps: s.allowedIps, ...data })
         return { allowedIps: s.allowedIps, ...data };
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 
 }

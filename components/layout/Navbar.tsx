@@ -7,7 +7,6 @@ import classes from './Navbar.module.css';
 
 export default function Navbar() {
     const path = usePathname();
-    console.log(path)
     const items = [
         {
             icon: IconDashboard,

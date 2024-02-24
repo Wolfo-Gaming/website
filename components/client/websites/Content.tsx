@@ -23,7 +23,6 @@ export default function Content() {
             if (config.apps.http.servers) {
                 const server = config.apps.http.servers["srv0"];
                 var res = server.routes.map((route: any) => {
-                    console.log(route)
                     var metadata: any;
                     var icon: any;
                     var type: any
@@ -100,7 +99,6 @@ export default function Content() {
                         </Flex>
                     }
                 })
-                console.log(res)
                 setData(res)
             }
         })
@@ -121,14 +119,14 @@ export default function Content() {
                                 <TextInput label={"Domain"} description={"Domain to accept requests from"} withAsterisk defaultValue={jp.value(conf.apps.http.servers["srv0"].routes[editConfigIndex], "$.match[0].host[0]") ?? ""} onChange={(event) => {
                                     var r = {}
                                     jp.value(r, `$.apps.http.servers["srv0"].routes[${editConfigIndex}].match[0].host[0]`, event.currentTarget.value)
-                                    console.log(r)
+                               
                                     const res = _.merge(conf, r)
                                     setTempConfig(res)
                                 }} />
                                 <TextInput label="Proxy host" description={"Target to redirect requests to"} withAsterisk defaultValue={jp.value(conf.apps.http.servers["srv0"].routes[editConfigIndex], "$.handle[0].routes[0].handle[0].upstreams[0].dial") ?? ""} onChange={(event) => {
                                     var r = {}
                                     jp.value(r, `$.apps.http.servers["srv0"].routes[${editConfigIndex}].handle[0].routes[0].handle[0].upstreams[0].dial`, event.currentTarget.value)
-                                    console.log(r)
+                                  
                                     const res = _.merge(conf, r)
                                     setTempConfig(res)
                                 }} />
@@ -154,14 +152,14 @@ export default function Content() {
                             <TextInput label={"Domain"} description={"Domain to accept requests from"} withAsterisk defaultValue={jp.value(conf.apps.http.servers["srv0"].routes[editConfigIndex], "$.match[0].host[0]") ?? ""} onChange={(event) => {
                                 var r = {}
                                 jp.value(r, `$.apps.http.servers["srv0"].routes[${editConfigIndex}].match[0].host[0]`, event.currentTarget.value)
-                                console.log(r)
+                               
                                 const res = _.merge(conf, r)
                                 setTempConfig(res)
                             }} />
                             <Textarea label="Content" description={"Content to serve"} withAsterisk defaultValue={jp.value(conf.apps.http.servers["srv0"].routes[editConfigIndex], "$.handle[0].routes[0].handle[0].body") ?? ""} onChange={(event) => {
                                 var r = {}
                                 jp.value(r, `$.apps.http.servers["srv0"].routes[${editConfigIndex}].handle[0].routes[0].handle[0].body`, event.currentTarget.value)
-                                console.log(r)
+                              
                                 const res = _.merge(conf, r)
                                 setTempConfig(res)
                             }} />
@@ -185,7 +183,7 @@ export default function Content() {
                     </>
                     : ""}
             </Modal>
-            <Table data={data.sort((a: any, b: any) => a.type.localeCompare(b.type))} headers={[{ name: "domain", width: rem(270) }, { name: "type" }, { name: "target" }, { name: "actions", width: rem(100), textAlign: "center" }]} onSelectionChange={console.log} />
+            <Table data={data.sort((a: any, b: any) => a.type.localeCompare(b.type))} headers={[{ name: "domain", width: rem(270) }, { name: "type" }, { name: "target" }, { name: "actions", width: rem(100), textAlign: "center" }]} />
 
         </>
     )
