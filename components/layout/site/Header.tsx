@@ -2,7 +2,7 @@ import { User } from "@/types/User"
 import { Button, Text } from "@mantine/core"
 import { IconLink } from "@tabler/icons-react"
 import Link from "next/link"
-export default function Header({ user }: { user: User | null }) {
+export default function Header() {
     return (
         <>
             <Text component={Link} href={"/"} my={"auto"} fw={500} fz={25} ml={20} color="white">
