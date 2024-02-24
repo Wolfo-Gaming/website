@@ -16,7 +16,7 @@ export default function About() {
                                     <IconCalendar style={{ marginTop: "auto", marginBottom: "auto", marginRight: "10px" }} />
 
                                     <Text my={"auto"}>
-                                        17 jaar
+                                        18 jaar
                                     </Text>
                                 </div>
                             </GridCol>
