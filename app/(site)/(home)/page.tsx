@@ -205,7 +205,7 @@ export default function HomePage() {
                 </Grid>
 
             </Paper>
-            <Text style={{ textAlign: "center" }} fw={600} fz={50} mt={40}>Hardware</Text>
+            <Text style={{ textAlign: "center" }} fw={600} fz={50} mt={40}>Ervaring Hardware</Text>
             <div style={{ marginLeft: "auto", marginRight: "auto", backgroundColor: '#2525c2', height: 5, width: 90, borderRadius: 10, marginBottom: 40 }} />
             <Paper mx={40} p={5} my={20} bg={"#111114"}>
                 <Grid columns={4} m={"lg"}>
@@ -215,6 +215,8 @@ export default function HomePage() {
                     <ContentCard img="/img/hardware/1921_K9_Front.jpg" imgprops={{ fit: "contain" }} color="rgb(190, 109, 52)" title="Cisco 1921" items={[]} href="https://pterodactyl.io/" showButton={false} />
                     <ContentCard img="/img/hardware/WS-C3560CG-8PC-S_Front.jpg" imgprops={{ fit: "contain" }} color="rgb(0, 150, 57)" title="Catalyst C3560" items={[]} href="https://www.nginx.com/" showButton={false} />
                     <ContentCard img="/img/hardware/5524_Front_View.jpg" imgprops={{ fit: "contain" }} color="rgb(208, 34, 46)" title="Powerconnect 5524" items={[]} href="https://httpd.apache.org/" showButton={false} />
+                    <ContentCard img="/img/hardware/raspberrypi3B.png" imgprops={{ fit: "contain" }} color="rgb(208, 34, 46)" title="Raspberry Pi 3B+" items={[]} href="https://httpd.apache.org/" showButton={false} />
+                    <ContentCard img="/img/hardware/raspberrypi5.png" imgprops={{ fit: "contain" }} color="rgb(208, 34, 46)" title="Raspberry Pi 5" items={[]} href="https://httpd.apache.org/" showButton={false} />
                 </Grid>
             </Paper>
 
