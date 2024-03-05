@@ -8,7 +8,10 @@ export default function Header() {
             <Text component={Link} href={"/"} my={"auto"} fw={500} fz={25} ml={20} color="white">
                 Robert de Leeuw
             </Text>
-            <Button ml={"auto"} component={Link} href={"/about"} color="#2525c2">
+            <Button ml={"auto"} mr={20} component={Link} href={"https://uptime.deleeuwit.nl/status/homepage"} color="#2525c2" variant="subtle">
+                Status
+            </Button>
+            <Button component={Link} href={"/about"} color="#2525c2">
                 Over mij
             </Button>
             {/* <Button component={Link} href={"/blog"} variant="subtle" ml={10} color="#2525c2">
