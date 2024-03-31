@@ -55,8 +55,13 @@ export default function HomePage() {
                     <ContentCard img="/img/software/azure.jpg" color="blue" title="Azure" items={[
                         "Opzetten van cloud-omgevingen",
                         "Aanmaken en onderhouden van VM's",
-                        "Remote access met VPN opzetten"
+                        "Remote access VPN opzetten"
                     ]} href="https://azure.microsoft.com/en-us/" />
+                    <ContentCard img="/img/software/microsoft365-logo.jpg" color="blue" title="Microsoft 365" items={[
+                        "Devices toevoegen aan Autopilot",
+                        "Devices configureren met scripts & policies",
+                        "Devices beheren met Intune"
+                    ]} href="https://www.microsoft.com/nl-nl/microsoft-365" />
                     <ContentCard img="/img/software/hetzner.jpg" color="rgb(213, 12, 45)" title="Hetzner" items={[
                         "Aanmaken van ARM en x86 VM's",
                         "Hosten van applicaties op VPS",
